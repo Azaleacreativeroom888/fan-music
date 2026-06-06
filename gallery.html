@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ギャラリー ✦ MELODERIUM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@400;700;900&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-bright: #3ecf6e;
+      --green-mint: #a8f0c6;
+      --green-deep: #1a8a4a;
+      --pink-hot: #ff4fa3;
+      --pink-soft: #ffb3d9;
+      --pink-pale: #ffe0f0;
+      --cream: #fffbf4;
+      --warm-white: #fff8fc;
+      --text-dark: #2d1a2e;
+      --text-mid: #5a3a5c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      color: var(--text-dark);
+    }
+
+    /* NAV */
+    header {
+      background: var(--warm-white);
+      border-bottom: 3px solid var(--pink-soft);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1.5rem;
+      color: var(--pink-hot);
+      text-decoration: none;
+    }
+    .logo span { color: var(--green-bright); }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { background: var(--pink-pale); color: var(--pink-hot); }
+    .nav-links a.active { background: var(--pink-hot); color: #fff; }
+
+    /* PAGE */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .page-sub {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 2.5rem;
+    }
+
+    /* SECTION HEADING */
+    .section-heading {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pink-hot);
+      flex-shrink: 0;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .grid-item {
+      background: var(--warm-white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .grid-item:hover {
+      border-color: var(--pink-soft);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(255,79,163,0.12);
+    }
+
+    .grid-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .grid-item-caption {
+      padding: 0.6rem 0.8rem;
+    }
+    .grid-item-caption .cap-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .grid-item-caption .cap-date {
+      font-size: 0.75rem;
+      color: #bbb;
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="logo" href="index.html">MELOD<span>ERIUM</span> ✦</a>
+      <ul class="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="playlist.html">プレイリスト</a></li>
+        <li><a href="gallery.html" class="active">ギャラリー</a></li>
+        <li><a href="about.html">about</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1 class="page-title">🎨 ギャラリー</h1>
+    <p class="page-sub">ファンアートなど置いてます。</p>
+
+    <h2 class="section-heading">ファンアート</h2>
+    <div class="grid">
+
+      <div class="grid-item">
+        <img src="画像ファイル名.jpg" alt="タイトル">
+        <div class="grid-item-caption">
+          <div class="cap-title">タイトル</div>
+          <div class="cap-date">2025-06-01</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer style="background:var(--warm-white);border-top:3px solid var(--green-mint);padding:2.5rem 2rem;text-align:center;font-family:'M PLUS Rounded 1c',sans-serif;">
+    <div style="font-family:'Dela Gothic One',sans-serif;font-size:1.4rem;color:var(--pink-hot);margin-bottom:0.5rem;">MELODERIUM ✦</div>
+    <ul style="display:flex;justify-content:center;gap:1.5rem;list-style:none;margin-bottom:0.8rem;">
+      <li><a href="index.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ホーム</a></li>
+      <li><a href="blog.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ブログ</a></li>
+      <li><a href="playlist.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">プレイリスト</a></li>
+      <li><a href="gallery.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ギャラリー</a></li>
+      <li><a href="about.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">about</a></li>
+    </ul>
+    <p style="font-size:0.85rem;color:var(--text-mid);">© 2025 MELODERIUM. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
