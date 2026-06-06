@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プレイリスト ✦ MELODERIUM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@400;700;900&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-bright: #3ecf6e;
+      --green-mint: #a8f0c6;
+      --green-deep: #1a8a4a;
+      --pink-hot: #ff4fa3;
+      --pink-soft: #ffb3d9;
+      --pink-pale: #ffe0f0;
+      --cream: #fffbf4;
+      --warm-white: #fff8fc;
+      --text-dark: #2d1a2e;
+      --text-mid: #5a3a5c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      color: var(--text-dark);
+    }
+
+    /* NAV */
+    header {
+      background: var(--warm-white);
+      border-bottom: 3px solid var(--pink-soft);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1.5rem;
+      color: var(--pink-hot);
+      text-decoration: none;
+    }
+    .logo span { color: var(--green-bright); }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { background: var(--pink-pale); color: var(--pink-hot); }
+    .nav-links a.active { background: var(--pink-hot); color: #fff; }
+
+    /* PAGE */
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .page-sub {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ENTRIES */
+    .entry {
+      display: flex;
+      gap: 1rem;
+      padding: 1.2rem 0;
+      border-bottom: 2px solid var(--pink-pale);
+    }
+    .entry:last-child { border-bottom: none; }
+
+    .entry-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .entry-body { flex: 1; }
+
+    .entry-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
+    }
+    .entry-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .entry-artist {
+      font-size: 0.85rem;
+      color: var(--green-deep);
+      font-weight: 700;
+    }
+    .entry-date {
+      font-size: 0.78rem;
+      color: #aaa;
+      margin-left: auto;
+    }
+    .entry-comment {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="logo" href="index.html">MELOD<span>ERIUM</span> ✦</a>
+      <ul class="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="playlist.html" class="active">プレイリスト</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="about.html">about</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1 class="page-title">🎧 プレイリスト</h1>
+    <p class="page-sub">今年よく聴いてる曲たち。気分で随時更新。</p>
+
+    <div class="entry">
+      <div class="entry-icon">🎵</div>
+      <div class="entry-body">
+        <div class="entry-meta">
+          <span class="entry-title">曲名をここに</span>
+          <span class="entry-artist">/ アーティスト名</span>
+          <span class="entry-date">2025-06-01</span>
+        </div>
+        <p class="entry-comment">一言感想をここに書きます。</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer style="background:var(--warm-white);border-top:3px solid var(--green-mint);padding:2.5rem 2rem;text-align:center;font-family:'M PLUS Rounded 1c',sans-serif;">
+    <div style="font-family:'Dela Gothic One',sans-serif;font-size:1.4rem;color:var(--pink-hot);margin-bottom:0.5rem;">MELODERIUM ✦</div>
+    <ul style="display:flex;justify-content:center;gap:1.5rem;list-style:none;margin-bottom:0.8rem;">
+      <li><a href="index.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ホーム</a></li>
+      <li><a href="blog.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ブログ</a></li>
+      <li><a href="playlist.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">プレイリスト</a></li>
+      <li><a href="gallery.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ギャラリー</a></li>
+      <li><a href="about.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">about</a></li>
+    </ul>
+    <p style="font-size:0.85rem;color:var(--text-mid);">© 2025 MELODERIUM. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
