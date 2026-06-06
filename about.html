@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about ✦ MELODERIUM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@400;700;900&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-bright: #3ecf6e;
+      --green-mint: #a8f0c6;
+      --green-deep: #1a8a4a;
+      --pink-hot: #ff4fa3;
+      --pink-soft: #ffb3d9;
+      --pink-pale: #ffe0f0;
+      --cream: #fffbf4;
+      --warm-white: #fff8fc;
+      --text-dark: #2d1a2e;
+      --text-mid: #5a3a5c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      color: var(--text-dark);
+    }
+
+    /* NAV */
+    header {
+      background: var(--warm-white);
+      border-bottom: 3px solid var(--pink-soft);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1.5rem;
+      color: var(--pink-hot);
+      text-decoration: none;
+    }
+    .logo span { color: var(--green-bright); }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { background: var(--pink-pale); color: var(--pink-hot); }
+    .nav-links a.active { background: var(--pink-hot); color: #fff; }
+
+    /* PAGE */
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+    }
+
+    /* SECTION */
+    .section-heading {
+      font-family: 'Dela Gothic One', sans-serif;
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pink-hot);
+      flex-shrink: 0;
+    }
+
+    /* PROFILE CARD */
+    .profile-card {
+      background: var(--warm-white);
+      border-radius: 20px;
+      border: 2px solid var(--pink-pale);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.9;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+    }
+
+    /* SITE LINKS */
+    .link-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 480px) { .link-grid { grid-template-columns: 1fr; } }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      background: var(--warm-white);
+      border: 2px solid var(--pink-pale);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .link-card:hover {
+      border-color: var(--pink-soft);
+      transform: translateY(-2px);
+    }
+    .link-icon {
+      font-size: 1.3rem;
+      width: 40px;
+      height: 40px;
+      background: var(--pink-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .link-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      display: block;
+    }
+    .link-desc {
+      font-size: 0.75rem;
+      color: var(--text-mid);
+    }
+
+    /* CONTACT */
+    .contact-card {
+      background: var(--warm-white);
+      border-radius: 20px;
+      border: 2px solid var(--pink-pale);
+      padding: 1.5rem;
+    }
+    .contact-intro {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group { margin-bottom: 1rem; }
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .required { color: var(--pink-hot); margin-left: 3px; }
+    .form-input, .form-textarea {
+      width: 100%;
+      background: var(--cream);
+      border: 2px solid var(--pink-pale);
+      border-radius: 10px;
+      color: var(--text-dark);
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.6rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: #ccc; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--pink-hot); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      background: var(--pink-hot);
+      border: none;
+      border-radius: 999px;
+      color: #fff;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.65rem 2rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .form-submit:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .form-success {
+      background: var(--green-mint);
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="logo" href="index.html">MELOD<span>ERIUM</span> ✦</a>
+      <ul class="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="playlist.html">プレイリスト</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="about.html" class="active">about</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1 class="page-title">🌸 about</h1>
+
+    <!-- 自己紹介 -->
+    <h2 class="section-heading">管理人について</h2>
+    <div class="profile-card">
+      自己紹介を書いてください。
+    </div>
+
+    <!-- サイトリンク -->
+    <h2 class="section-heading">関連サイト</h2>
+    <div class="link-grid">
+
+      <a class="link-card" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+        <div class="link-icon">🦋</div>
+        <div>
+          <span class="link-name">Bluesky</span>
+          <span class="link-desc">近況など</span>
+        </div>
+      </a>
+
+      <a class="link-card" href="https://kakuyomu.jp/users/azalea_azalea72" target="_blank" rel="noopener">
+        <div class="link-icon">✒️</div>
+        <div>
+          <span class="link-name">カクヨム</span>
+          <span class="link-desc">小説を掲載</span>
+        </div>
+      </a>
+
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/Azaleamangaroom/" target="_blank" rel="noopener">
+        <div class="link-icon">🎨</div>
+        <div>
+          <span class="link-name">漫画掲載サイト</span>
+          <span class="link-desc">漫画を投稿中</span>
+        </div>
+      </a>
+
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener">
+        <div class="link-icon">📖</div>
+        <div>
+          <span class="link-name">書評サイト</span>
+          <span class="link-desc">小説のレビュー</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- メール受付 -->
+    <h2 class="section-heading">お問い合わせ</h2>
+    <div class="contact-card">
+      <p class="contact-intro">ご質問・ご感想などはこちらからどうぞ。</p>
+      <div class="form-success" id="form-success">✉️ 送信しました！ありがとうございます。</div>
+      <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="name">お名前</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="名前">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">メールアドレス<span class="required">*</span></label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">メッセージ<span class="required">*</span></label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="メッセージを入力してください…" required></textarea>
+        </div>
+        <button class="form-submit" type="submit">📮 送信する</button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer style="background:var(--warm-white);border-top:3px solid var(--green-mint);padding:2.5rem 2rem;text-align:center;font-family:'M PLUS Rounded 1c',sans-serif;">
+    <div style="font-family:'Dela Gothic One',sans-serif;font-size:1.4rem;color:var(--pink-hot);margin-bottom:0.5rem;">MELODERIUM ✦</div>
+    <ul style="display:flex;justify-content:center;gap:1.5rem;list-style:none;margin-bottom:0.8rem;">
+      <li><a href="index.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ホーム</a></li>
+      <li><a href="blog.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ブログ</a></li>
+      <li><a href="playlist.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">プレイリスト</a></li>
+      <li><a href="gallery.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">ギャラリー</a></li>
+      <li><a href="about.html" style="text-decoration:none;font-family:'Fredoka',sans-serif;color:var(--green-deep);">about</a></li>
+    </ul>
+    <p style="font-size:0.85rem;color:var(--text-mid);">© 2025 MELODERIUM. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
