@@ -103,6 +103,9 @@
       background: var(--pink-hot);
       flex-shrink: 0;
     }
+    .section-heading.green::before { background: var(--green-bright); }
+
+    .section-block { margin-bottom: 3.5rem; }
 
     /* GRID */
     .grid {
@@ -123,27 +126,48 @@
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(255,79,163,0.12);
     }
-
     .grid-item img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
     }
+    .grid-item-caption { padding: 0.6rem 0.8rem; }
+    .grid-item-caption .cap-title { font-size: 0.88rem; font-weight: 700; color: var(--text-dark); }
+    .grid-item-caption .cap-date { font-size: 0.75rem; color: #bbb; margin-top: 0.2rem; }
 
-    .grid-item-caption {
-      padding: 0.6rem 0.8rem;
-    }
-    .grid-item-caption .cap-title {
-      font-size: 0.88rem;
-      font-weight: 700;
+    /* RANKING LIST */
+    .ranking-list { display: flex; flex-direction: column; gap: 0.8rem; }
+
+    .ranking-item {
+      background: var(--warm-white);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      text-decoration: none;
       color: var(--text-dark);
+      border-left: 4px solid var(--green-bright);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: transform 0.15s, border-color 0.15s;
     }
-    .grid-item-caption .cap-date {
-      font-size: 0.75rem;
-      color: #bbb;
-      margin-top: 0.2rem;
+    .ranking-item:hover {
+      transform: translateX(4px);
+      border-color: var(--pink-hot);
     }
+    .ranking-item-left { display: flex; align-items: center; gap: 0.8rem; }
+    .ranking-date {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      background: var(--green-mint);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ranking-title { font-size: 0.95rem; font-weight: 700; }
+    .ranking-arrow { color: var(--pink-hot); font-size: 1.2rem; flex-shrink: 0; }
   </style>
 </head>
 <body>
@@ -163,20 +187,40 @@
 
   <main class="page">
     <h1 class="page-title">🎨 ギャラリー</h1>
-    <p class="page-sub">ファンアートなど置いてます。</p>
+    <p class="page-sub">ファンアートやビルボードランキングの感想など。</p>
 
-    <h2 class="section-heading">ファンアート</h2>
-    <div class="grid">
+    <!-- ファンアート -->
+    <div class="section-block">
+      <h2 class="section-heading">ファンアート</h2>
+      <div class="grid">
 
-      <div class="grid-item">
-        <img src="画像ファイル名.jpg" alt="タイトル">
-        <div class="grid-item-caption">
-          <div class="cap-title">タイトル</div>
-          <div class="cap-date">2025-06-01</div>
+        <div class="grid-item">
+          <img src="画像ファイル名.jpg" alt="タイトル">
+          <div class="grid-item-caption">
+            <div class="cap-title">タイトル</div>
+            <div class="cap-date">2025-06-01</div>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
+
+    <!-- ビルボードランキングの感想 -->
+    <div class="section-block">
+      <h2 class="section-heading green">🏆 Billboard Ranking 感想</h2>
+      <div class="ranking-list">
+
+        <a href="ranking1.html" class="ranking-item">
+          <div class="ranking-item-left">
+            <span class="ranking-date">2000年</span>
+            <span class="ranking-title">2000年のランキング（アメリカ）</span>
+          </div>
+          <span class="ranking-arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+
   </main>
 
   <footer style="background:var(--warm-white);border-top:3px solid var(--green-mint);padding:2.5rem 2rem;text-align:center;font-family:'M PLUS Rounded 1c',sans-serif;">
